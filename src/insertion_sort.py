@@ -1,5 +1,7 @@
 # Funktionens tidskomplexitet ökar kvadratiskt O(n²)
 
+import random
+
 def insertion_sort(lst):
     result = []
     for item in lst:    # körs x gånger
@@ -14,6 +16,10 @@ def insertion_sort(lst):
             result.append(item)
     return result
 
+# Använder seed för att få samma tal slumpmässigt för att kunna göra prestanda tester
+def generate_list(size):
+    random_list = random.Random(42)
+    return [random_list.randint(0, 100000) for _ in range(size)]
 
 
 
